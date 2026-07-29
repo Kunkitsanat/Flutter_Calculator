@@ -29,6 +29,8 @@ class _CalculatorPage extends State<SimpleCalculator> {
   final TextEditingController _num1 = TextEditingController();
   final TextEditingController _num2 = TextEditingController();
 
+  String _result = "";
+
   @override
   Widget build(BuildContext context) {
 
@@ -64,6 +66,26 @@ class _CalculatorPage extends State<SimpleCalculator> {
                     contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 25)
                   ))
                   ),
+
+                const SizedBox(width: 10),
+
+                Expanded(child: Container(
+                  padding: const EdgeInsets.all(10),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+
+                  child: Text(
+                  _result.isEmpty ? "0" : _result,
+                  style: const TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                 ),
+                ))
               ]
             )
           ],
