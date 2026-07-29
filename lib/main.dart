@@ -69,6 +69,8 @@ class _CalculatorPage extends State<SimpleCalculator> {
 
                 const SizedBox(width: 10),
 
+                const Expanded(child: Center(child: Text('=', style: TextStyle(fontSize: 32)))),
+
                 Expanded(child: Container(
                   padding: const EdgeInsets.all(10),
                   alignment: Alignment.center,
