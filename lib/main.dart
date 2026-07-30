@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_calc/calculate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -98,7 +99,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
               children: [
                 ElevatedButton(onPressed: (){
                   setState(() {
-                    
+                    _result = calculate(double.tryParse(_num1.text) ?? 0, '+', double.tryParse(_num2.text) ?? 0);
                   });
                 },child: const Text('+',style: TextStyle(fontSize: 32),)),
 
@@ -106,7 +107,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
 
                 ElevatedButton(onPressed: (){
                   setState(() {
-                    
+                    _result = calculate(double.tryParse(_num1.text) ?? 0, '-', double.tryParse(_num2.text) ?? 0);
                   });
                 },child: const Text('-',style: TextStyle(fontSize: 32),)),
 
@@ -114,7 +115,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
 
                 ElevatedButton(onPressed: (){
                   setState(() {
-                    
+                    _result = calculate(double.tryParse(_num1.text) ?? 0, '*', double.tryParse(_num2.text) ?? 0);
                   });
                 },child: const Text('x',style: TextStyle(fontSize: 32),)),
 
@@ -122,7 +123,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
 
                 ElevatedButton(onPressed: (){
                   setState(() {
-                    
+                    _result = calculate(double.tryParse(_num1.text) ?? 0, '/', double.tryParse(_num2.text) ?? 0);
                   });
                 },child: const Text('÷',style: TextStyle(fontSize: 32),)),
               ])
