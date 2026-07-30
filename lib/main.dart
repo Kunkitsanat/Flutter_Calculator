@@ -89,7 +89,43 @@ class _CalculatorPage extends State<SimpleCalculator> {
                  ),
                 ))
               ]
-            )
+            ),
+
+            const SizedBox(width: 10,height: 30),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    
+                  });
+                },child: const Text('+',style: TextStyle(fontSize: 32),)),
+
+                const SizedBox(width: 20),
+
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    
+                  });
+                },child: const Text('-',style: TextStyle(fontSize: 32),)),
+
+                const SizedBox(width: 20),
+
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    
+                  });
+                },child: const Text('x',style: TextStyle(fontSize: 32),)),
+
+                const SizedBox(width: 20),
+
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    
+                  });
+                },child: const Text('÷',style: TextStyle(fontSize: 32),)),
+              ])
           ],
         ),
       ),
