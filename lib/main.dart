@@ -33,6 +33,8 @@ class _CalculatorPage extends State<SimpleCalculator> {
   String _result = "";
   String operator = "";
 
+  List <String> history = [];
+
   @override
   Widget build(BuildContext context) {
 
@@ -104,6 +106,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '+', double.tryParse(_num2.text) ?? 0);
                     operator = '+';
+                    history.add("${_num1.text} + ${_num2.text} = ${_result}");
                   });
                 },child: const Text('+',style: TextStyle(fontSize: 32),)),
 
@@ -113,6 +116,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '-', double.tryParse(_num2.text) ?? 0);
                     operator = '-';
+                    history.add("${_num1.text} - ${_num2.text} = ${_result}");
                   });
                 },child: const Text('-',style: TextStyle(fontSize: 32),)),
 
@@ -122,6 +126,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '*', double.tryParse(_num2.text) ?? 0);
                     operator = 'x';
+                    history.add("${_num1.text} x ${_num2.text} = ${_result}");
                   });
                 },child: const Text('x',style: TextStyle(fontSize: 32),)),
 
@@ -131,6 +136,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '/', double.tryParse(_num2.text) ?? 0);
                     operator = '÷';
+                    history.add("${_num1.text} ÷ ${_num2.text} = ${_result}");
                   });
                 },child: const Text('÷',style: TextStyle(fontSize: 32),)),
               ])
