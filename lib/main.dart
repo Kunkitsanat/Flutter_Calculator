@@ -31,6 +31,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
   final TextEditingController _num2 = TextEditingController();
 
   String _result = "";
+  String operator = "";
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +58,8 @@ class _CalculatorPage extends State<SimpleCalculator> {
                 ),
 
                 const SizedBox(width: 10),
+
+                Expanded(child: Text(operator,style: TextStyle(fontSize: 32),textAlign: TextAlign.center,)),
 
                 Expanded(child: TextField(
                   controller: _num2,
@@ -100,6 +103,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                 ElevatedButton(onPressed: (){
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '+', double.tryParse(_num2.text) ?? 0);
+                    operator = '+';
                   });
                 },child: const Text('+',style: TextStyle(fontSize: 32),)),
 
@@ -108,6 +112,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                 ElevatedButton(onPressed: (){
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '-', double.tryParse(_num2.text) ?? 0);
+                    operator = '-';
                   });
                 },child: const Text('-',style: TextStyle(fontSize: 32),)),
 
@@ -116,6 +121,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                 ElevatedButton(onPressed: (){
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '*', double.tryParse(_num2.text) ?? 0);
+                    operator = 'x';
                   });
                 },child: const Text('x',style: TextStyle(fontSize: 32),)),
 
@@ -124,6 +130,7 @@ class _CalculatorPage extends State<SimpleCalculator> {
                 ElevatedButton(onPressed: (){
                   setState(() {
                     _result = calculate(double.tryParse(_num1.text) ?? 0, '/', double.tryParse(_num2.text) ?? 0);
+                    operator = '÷';
                   });
                 },child: const Text('÷',style: TextStyle(fontSize: 32),)),
               ])
