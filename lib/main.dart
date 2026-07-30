@@ -139,7 +139,27 @@ class _CalculatorPage extends State<SimpleCalculator> {
                     history.add("${_num1.text} ÷ ${_num2.text} = ${_result}");
                   });
                 },child: const Text('÷',style: TextStyle(fontSize: 32),)),
-              ])
+              ]),
+
+              const SizedBox(height: 30,),
+              Expanded(
+                child: ListView(
+                  children: [
+                    Text('History:',style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold),textAlign: TextAlign.center),
+
+                    for (String item in history)
+                      Card(
+                        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                        child: ListTile(
+                          title: Text(
+                            item,
+                            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ),
+                  ],
+                ))
           ],
         ),
       ),
