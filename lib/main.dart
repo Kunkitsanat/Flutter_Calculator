@@ -36,6 +36,12 @@ class _CalculatorPage extends State<SimpleCalculator> {
 
   List <String> history = [];
 
+  void clearHistory() {
+    setState( () {
+      history.clear();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -157,6 +163,14 @@ class _CalculatorPage extends State<SimpleCalculator> {
                     history.insert(0,"${_num1.text} ÷ ${_num2.text} = ${_result}");
                   });
                 },child: const Text('÷',style: TextStyle(fontSize: 32),)),
+
+                const SizedBox(width: 20),
+
+                ElevatedButton(
+                  onPressed: clearHistory,
+                  child: const Text('C',style: TextStyle(fontSize: 32),),
+                ),
+
               ]),
 
               const SizedBox(height: 30,),
