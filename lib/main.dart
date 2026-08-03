@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simple_calc/calculate.dart';
+import 'about_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,6 +47,23 @@ class _CalculatorPage extends State<SimpleCalculator> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AboutPage()),
+                    );
+                  },
+                child: const Text('About Page'),
+                )
+              ],
+            ),
+
+            const SizedBox(height: 10),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
