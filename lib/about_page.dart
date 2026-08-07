@@ -16,7 +16,7 @@ class AboutPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                'Developed by [ชื่อกลุ่มของคุณ]',
+                'Developed by MOT Dev',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -38,12 +38,12 @@ class AboutPage extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                '2. นาย/นางสาว ชื่อ-นามสกุล (รหัสนักศึกษา)',
+                '2. นายพงศภัค ดิเรกฤทธิ์สุนทร 6801012610391',
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 8),
               Text(
-                '3. นาย/นางสาว ชื่อ-นามสกุล (รหัสนักศึกษา)',
+                '3. นายคุณากร เจริญสุข 6801012610413',
                 style: TextStyle(fontSize: 16),
               ),
             ],
